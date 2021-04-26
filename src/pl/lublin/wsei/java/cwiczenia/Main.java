@@ -1,6 +1,7 @@
 package pl.lublin.wsei.java.cwiczenia;
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
     /**
@@ -10,30 +11,24 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        int[] liczby = new int[30];
+        Random rnd = new Random();
 
-        Scanner inp = new Scanner(System.in);
-        int x, y;
-        do {
-            System.out.print("Podaj liczbe: ");
-            x = inp.nextInt();
-            if (x == 0) break;
+        for (int i = 0; i < 30; i++)
+            liczby[i] = rnd.nextInt();
 
-            System.out.printf("dec=%s\nhex=%s\nbin=%s \n".toUpperCase(),
-                    x,
-                    leftPad(Integer.toHexString(x), '0', 4),
-                    leftPad(Integer.toBinaryString(x), '0', 4));
+        int mx = Integer.MIN_VALUE;
+        int mn = Integer.MAX_VALUE;
+        long avg = 0;
+        for (int l : liczby) {
 
-        } while (true);
-
-
-    }
-
-    public static String leftPad(String aText, char aChar, int aWidth) {
-        String res = aText;
-        for (int i = 0; i < aWidth; i += 1) {
-            res = aChar + res;
+            System.out.println(l);
+            if (l < mn) mn = l;
+            if (l > mx) mx = l;
+            avg += l;
         }
+        System.out.printf("MIN = %d, MAX = %d, AVG = %f", mn, mx, (float) avg / liczby.length);
 
-        return res;
+
     }
 }
