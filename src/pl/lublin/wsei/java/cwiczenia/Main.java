@@ -12,5 +12,8 @@ public class Main {
         System.out.println("Kot");
         System.out.println("ma");
         System.out.println("Ale");
+        System.out.print("Kot\n");
+        System.out.print("ma\n");
+        System.out.print("Ale\n");
     }
 }
