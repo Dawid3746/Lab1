@@ -6,9 +6,7 @@ public class Main {
      * @param args argumenty funkcji main
      */
     public static void main(String[] args){
-        System.out.println("Hello Java world\n");
-        System.out.print("Kot\n");
-        System.out.print("ma\n");
-        System.out.print("Ale\n");
+
+
     }
 }
