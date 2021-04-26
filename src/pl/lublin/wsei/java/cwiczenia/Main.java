@@ -9,5 +9,8 @@ public class Main {
         System.out.print("Kot");
         System.out.print("ma");
         System.out.print("Ale");
+        System.out.println("Kot");
+        System.out.println("ma");
+        System.out.println("Ale");
     }
 }
