@@ -20,6 +20,12 @@ public class Main {
             System.out.printf("%d\t%f\n", i, Math.sin(i/360.0*2*Math.PI));
         }
 
+        int sum = 0;
+        System.out.println("\narg\tlog2(arg)\tsum(arg)");
+        for (int i = 1; i < 32; i *= 2){
+            sum += i;
+            System.out.printf("%d\t%.2f\t\t%d\n", i, (Math.log(i)/Math.log(2)), sum);
+        }
 
     }
 }
