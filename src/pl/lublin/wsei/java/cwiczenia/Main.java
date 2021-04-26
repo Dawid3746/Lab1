@@ -15,6 +15,10 @@ public class Main {
 
         System.out.println("Nazywaliśmy to \"Witamina B3\"");
 
+        System.out.println("\nalfa\tsin(alfa)");
+        for (int i =0; i < 370; i += 10){
+            System.out.printf("%d\t%f\n", i, Math.sin(i/360.0*2*Math.PI));
+        }
 
 
     }
