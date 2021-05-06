@@ -3,7 +3,6 @@ package pl.lublin.wsei.java.cwiczenia.mylib;
 import org.apache.commons.lang3.StringUtils;
 
 
-
 public class StringFun {
 
     public static String anarchize(String str) {
@@ -68,4 +67,28 @@ public class StringFun {
         }
         return res;
     }
+
+
+    public static boolean isPalindrome(String str) {
+
+        String SpecialCharactersString = ",./;'[]<>?: \"{}`-=_+|!@#$%^&*()";
+
+        for (int i = 0; i < str.length(); i++) {
+            int reverseIdx = str.length() - i - 1;
+
+            int check1 = SpecialCharactersString.indexOf(str.charAt(i));
+            int check2 = SpecialCharactersString.indexOf(str.charAt(reverseIdx));
+
+            if (check1 != -1 || check2 != -1) continue;
+            else {
+                if (Character.toLowerCase(str.charAt(i)) != Character.toLowerCase(str.charAt(reverseIdx))) {
+                    return false;
+
+                }
+            }
+        }
+        return true;
+    }
+
+
 }
