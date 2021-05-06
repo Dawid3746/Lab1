@@ -6,13 +6,13 @@ import org.apache.commons.lang3.StringUtils;
 
 public class StringFun {
 
-    public static String anarchize(String str){
+    public static String anarchize(String str) {
 
         String res = "";
 
-        for (int i = 0; i < str.length(); i++){
+        for (int i = 0; i < str.length(); i++) {
 
-            if (Character.isUpperCase(str.charAt(i))){
+            if (Character.isUpperCase(str.charAt(i))) {
                 res += Character.toLowerCase(str.charAt(i));
             } else {
                 res += Character.toUpperCase(str.charAt(i));
@@ -22,16 +22,49 @@ public class StringFun {
     }
 
 
-
-    public static String camelize(String str){
+    public static String camelize(String str) {
 
         String res = "";
 
         String[] tokens = StringUtils.split(str, ' ');
         res += tokens[0].toLowerCase();
 
-        for (int i = 1; i < tokens.length; i++){
+        for (int i = 1; i < tokens.length; i++) {
             res += StringUtils.capitalize(tokens[i].toLowerCase());
+        }
+        return res;
+    }
+
+
+    public static String decamelize1(String a) {
+
+        String res = "";
+
+        char[] tokens = a.toCharArray();
+        res += Character.toUpperCase(tokens[0]);
+
+        for (int i = 1; i < tokens.length; i++) {
+            if (Character.isUpperCase(tokens[i])) {
+                res += " " + tokens[i];
+            } else {
+                res += tokens[i];
+            }
+        }
+
+        return res;
+    }
+
+    public static String decamelize2(String a) {
+
+        String[] tokens = StringUtils.splitByCharacterTypeCamelCase(a);
+        String res = "";
+
+        for (String token : tokens) {
+            if (token.equals(tokens[0])) {
+                res += StringUtils.capitalize(token);
+            } else {
+                res += " " + token;
+            }
         }
         return res;
     }
