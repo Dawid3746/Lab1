@@ -1,6 +1,7 @@
 package pl.lublin.wsei.java.cwiczenia.mylib;
 
 import org.apache.commons.lang3.StringUtils;
+import java.util.Random;
 
 
 public class StringFun {
@@ -88,6 +89,23 @@ public class StringFun {
             }
         }
         return true;
+    }
+
+    public static String shuffle(String x){
+
+        Random random = new Random();
+        String res = "";
+
+        int end = x.length();
+
+        for (int i = 0; i < end; i++){
+
+            char p = x.charAt(random.nextInt(x.length()));
+            res += p;
+
+            x = StringUtils.remove(x, p);
+        }
+        return res;
     }
 
 
